@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+# DropMail
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Projeto em React
 
-## Available Scripts
+## 🔨 Funcionalidades do projeto
 
-In the project directory, you can run:
+Neste projeto foi elaborado a tela Home de um gerar de e-mails temporários. Com o intuito de prevenir: spam, correspondências publicitárias, hackers e robôs de ataque. Mantendo sua caixa de correio limpa e segura. O DropMail fornece um endereço de e-mail temporário, seguro, anônimo, gratuito e descartável.
 
-### `npm start`
+## ✔️ Técnicas e tecnologias utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- `apollo`: Apollo Client é uma biblioteca abrangente de gerenciamento de estado para JavaScript que permite gerenciar dados locais e remotos com GraphQL.
+- `heroicons`: Ícones SVG feitos, pelos criadores do Tailwind CSS.
+- `tailwindcss`: O Tailwind CSS é uma estrutura CSS, para a criação rápida de sites modernos sem sair do HTML.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 🐙 Clonando o projeto
 
-### `npm test`
+Para ter acesso aos arquivos do projeto você pode clonar usando o seguinte comando:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+git clone https://github.com/lspenha/dropmail-challenge
+```
 
-### `npm run build`
+### ▶️ Rodando o Projeto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Agora que já tem a pasta do projeto na sua máquina, dentro dela instale as dependências:
+```
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Então podemos rodar o projeto:
+```
+npm run start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Saber mais
 
-### `npm run eject`
+Você pode aprender mais no [Create React App Documentação](https://facebook.github.io/create-react-app/docs/getting-started).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Para aprender React, confira o [Documentação do React](https://reactjs.org/).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This is a challenge by [Coodesh](https://coodesh.com/).

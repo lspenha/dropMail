@@ -15,7 +15,7 @@ const Modal = ({ onClick, loading }: ModalProps) => {
           <h1 className="m-auto mb-2 text-3xl">DropMail</h1>
           <h2 className="m-auto text-lg p-5">
             Forget about spam, advertising mailings, hacking and attacking
-            robots. Keep your real mailbox clean and secure. Temp Mail provides
+            robots. Keep your real mailbox clean and secure. DropMail provides
             temporary, secure, anonymous, free, disposable email address.
           </h2>
           <button
