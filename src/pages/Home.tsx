@@ -1,22 +1,26 @@
+import { useEffect, useState } from "react";
 import { useMutation, useQuery } from "@apollo/client";
 import { GENERATE_SESSION, GET_EMAILS } from "apollo/querys";
-import useInterval from "hooks/useInterval";
+
+import {
+  ClipboardDocumentCheckIcon,
+  PencilIcon
+} from "@heroicons/react/24/solid";
+
+import { AutorefreshComponent } from "components/AutorefreshComponent";
+import { HeaderComponet } from "components/HeaderComponet";
+import { InboxComponet } from "components/InboxComponet";
+import { ModalComponet } from "components/ModalComponet";
+
 import {
   useDeleteLocalStorage,
   useGetLocalStorage,
   useSetLocalStorage
 } from "hooks/useLocalStorage";
-import { useEffect, useState } from "react";
+import useInterval from "hooks/useInterval";
+
 import { DataSession, Session } from "utils/interface/session";
 import { Mail } from "utils/interface/mail";
-import {
-  ClipboardDocumentCheckIcon,
-  PencilIcon
-} from "@heroicons/react/24/solid";
-import { AutorefreshComponent } from "components/AutorefreshComponent";
-import { HeaderComponet } from "components/HeaderComponet";
-import { InboxComponet } from "components/InboxComponet";
-import { ModalComponet } from "components/ModalComponet";
 
 const HomeLayout = () => {
   const localStoregeKey = "session";

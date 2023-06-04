@@ -1,5 +1,5 @@
-import { EnvelopeIcon, BellAlertIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
+import { EnvelopeIcon, BellAlertIcon } from "@heroicons/react/24/solid";
 
 export function HeaderComponet() {
   const [active, setActive] = useState(false);

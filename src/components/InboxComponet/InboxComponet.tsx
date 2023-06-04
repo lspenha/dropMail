@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { GET_EMAILS } from "apollo/querys";
+
+import { EmailComponet } from "components/EmailComponet";
+
 import { useGetLocalStorage, useSetLocalStorage } from "hooks/useLocalStorage";
+
 import { Session } from "utils/interface/session";
 import { Mail, MailData } from "utils/interface/mail";
-import { EmailComponet } from "components/EmailComponet";
 
 export function InboxComponet() {
   const localStoregeKey = "session";
