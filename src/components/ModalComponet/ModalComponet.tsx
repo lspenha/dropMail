@@ -1,12 +1,11 @@
 import { MouseEvent } from "react";
-import CircleSpin from "assets/circle-spin-icon.svg";
 
 interface ModalProps {
   onClick: (e: MouseEvent<HTMLButtonElement>) => void;
   loading: boolean;
 }
 
-const Modal = ({ onClick, loading }: ModalProps) => {
+export function ModalComponet({ onClick, loading }: ModalProps) {
   return (
     <>
       <div className="blur-lg backdrop-blur-lg h-full w-full absolute z-40"></div>
@@ -49,6 +48,4 @@ const Modal = ({ onClick, loading }: ModalProps) => {
       </div>
     </>
   );
-};
-
-export default Modal;
+}

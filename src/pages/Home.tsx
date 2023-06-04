@@ -1,8 +1,5 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { GENERATE_SESSION, GET_EMAILS } from "apollo/querys";
-import Header from "components/header";
-import Inbox from "components/Inbox";
-import Modal from "components/modal";
 import useInterval from "hooks/useInterval";
 import {
   useDeleteLocalStorage,
@@ -10,17 +7,16 @@ import {
   useSetLocalStorage
 } from "hooks/useLocalStorage";
 import { useEffect, useState } from "react";
-import {
-  DataSession,
-  IntroduceSession,
-  Session
-} from "utils/interface/session";
+import { DataSession, Session } from "utils/interface/session";
 import { Mail } from "utils/interface/mail";
 import {
-  ArrowPathIcon,
   ClipboardDocumentCheckIcon,
   PencilIcon
 } from "@heroicons/react/24/solid";
+import { AutorefreshComponent } from "components/AutorefreshComponent";
+import { HeaderComponet } from "components/HeaderComponet";
+import { InboxComponet } from "components/InboxComponet";
+import { ModalComponet } from "components/ModalComponet";
 
 const HomeLayout = () => {
   const localStoregeKey = "session";
@@ -65,17 +61,17 @@ const HomeLayout = () => {
     setInterval(initialIntervalValue);
   }
 
-  // useInterval(
-  //   () =>
-  //     setInterval(old => {
-  //       if (old < 1) {
-  //         return 15;
-  //       } else {
-  //         return old - 1;
-  //       }
-  //     }),
-  //   !loadingQueryGetEmails && session ? 1000 : null
-  // );
+  useInterval(
+    () =>
+      setInterval(old => {
+        if (old < 1) {
+          return 15;
+        } else {
+          return old - 1;
+        }
+      }),
+    !loadingQueryGetEmails && session ? 1000 : null
+  );
 
   useEffect(() => {
     if (session && new Date(session.expiresAt) < new Date()) {
@@ -90,10 +86,13 @@ const HomeLayout = () => {
   return (
     <>
       {modalIsOpen && (
-        <Modal onClick={closeModal} loading={loadingQueryCreateSession} />
+        <ModalComponet
+          onClick={closeModal}
+          loading={loadingQueryCreateSession}
+        />
       )}
       <div>
-        <Header />
+        <HeaderComponet />
         <div className="p-4 h-[70vh]">
           <section className="py-10 flex">
             <div className="my-0 mx-auto w-96">
@@ -122,23 +121,13 @@ const HomeLayout = () => {
                   Change
                 </button>
               </div>
-              <div className="text-center flex justify-center items-center mt-5">
-                Autorefresh in
-                <span className="rounded-full ml-2 w-7 h-7 border-blue-600 border">
-                  {interval}
-                </span>
-                <button
-                  type="button"
-                  onClick={refreshEmails}
-                  className="ml-2 text-white bg-[#24292F] hover:bg-[#24292F]/90 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30"
-                >
-                  <ArrowPathIcon className={"w-6 mr-1"} />
-                  Refresh
-                </button>
-              </div>
+              <AutorefreshComponent
+                interval={interval}
+                refreshEmails={refreshEmails}
+              />
             </div>
           </section>
-          <Inbox />
+          <InboxComponet />
         </div>
       </div>
     </>

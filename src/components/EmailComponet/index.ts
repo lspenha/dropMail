@@ -1,0 +1,1 @@
+export { EmailComponet } from "./EmailComponet";

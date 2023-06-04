@@ -5,7 +5,12 @@ interface EmailProps {
   selectEmail: () => void;
 }
 
-const Email = ({ headerSubject, text, fromAddr, selectEmail }: EmailProps) => {
+export function EmailComponet({
+  headerSubject,
+  text,
+  fromAddr,
+  selectEmail
+}: EmailProps) {
   return (
     <>
       <li
@@ -26,6 +31,4 @@ const Email = ({ headerSubject, text, fromAddr, selectEmail }: EmailProps) => {
       </li>
     </>
   );
-};
-
-export default Email;
+}

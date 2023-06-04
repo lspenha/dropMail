@@ -1,0 +1,1 @@
+export { ModalComponet } from "./ModalComponet";

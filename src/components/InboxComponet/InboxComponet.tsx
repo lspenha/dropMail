@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { GET_EMAILS } from "apollo/querys";
 import { useGetLocalStorage, useSetLocalStorage } from "hooks/useLocalStorage";
-import Email from "./email";
 import { Session } from "utils/interface/session";
 import { Mail, MailData } from "utils/interface/mail";
+import { EmailComponet } from "components/EmailComponet";
 
-const Inbox = () => {
+export function InboxComponet() {
   const localStoregeKey = "session";
   const session: Session = useGetLocalStorage(localStoregeKey);
 
@@ -25,6 +25,15 @@ const Inbox = () => {
         ...session,
         expiresAt: emails.session.expiresAt
       });
+      if (
+        previousData &&
+        JSON.stringify(previousData.session.mails) !==
+          JSON.stringify(emails.session.mails)
+      ) {
+        new Notification("DropMail", {
+          body: "There's a new email in your inbox!"
+        });
+      }
     }
   }, [emails]);
 
@@ -44,7 +53,7 @@ const Inbox = () => {
           {emails &&
             emails.session.mails.map(({ fromAddr, text, headerSubject }, i) => (
               <>
-                <Email
+                <EmailComponet
                   key={i}
                   text={text}
                   fromAddr={fromAddr}
@@ -72,6 +81,4 @@ const Inbox = () => {
       </section>
     </div>
   );
-};
-
-export default Inbox;
+}
