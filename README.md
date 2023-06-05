@@ -8,9 +8,12 @@ Neste projeto foi elaborado a tela Home de um gerar de e-mails temporários. Com
 
 ## ✔️ Técnicas e tecnologias utilizadas
 
+- `React`: O React é uma biblioteca front-end JavaScript de código aberto com foco em criar interfaces de usuário em páginas web.
+- `typescript`: TypeScript é uma linguagem de programação fortemente tipada que se baseia em JavaScript, oferecendo melhores ferramentas em qualquer escala.
 - `apollo`: Apollo Client é uma biblioteca abrangente de gerenciamento de estado para JavaScript que permite gerenciar dados locais e remotos com GraphQL.
 - `heroicons`: Ícones SVG feitos, pelos criadores do Tailwind CSS.
 - `tailwindcss`: O Tailwind CSS é uma estrutura CSS, para a criação rápida de sites modernos sem sair do HTML.
+
 
 ### 🐙 Clonando o projeto
 
@@ -33,6 +36,8 @@ npm run start
 ```
 
 ## Saber mais
+
+Link: [Link da apresentação do projeto](https://www.loom.com/embed/652909a1b3c741b088d93b3743b1a91a)
 
 Você pode aprender mais no [Create React App Documentação](https://facebook.github.io/create-react-app/docs/getting-started).
 
