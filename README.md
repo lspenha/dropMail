@@ -37,7 +37,8 @@ npm run start
 
 ## Saber mais
 
-Links: 
+Links:
+
 [Link da apresentação do projeto](https://www.loom.com/embed/652909a1b3c741b088d93b3743b1a91a)
 
 [Link vercel do projeto]([https://www.loom.com/embed/652909a1b3c741b088d93b3743b1a91a](https://dropmail-five.vercel.app/)) OBS: Favor utilizar a ferramenta [corsanywhere herokuapp](https://cors-anywhere.herokuapp.com) 
